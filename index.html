@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>通知画面</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", "メイリオ", sans-serif;
+      background: #fff;
+      max-width: 480px;
+      margin: 0 auto;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid #aaa;
+      height: 64px;
+      background: #f5f5f5;
+      box-sizing: border-box;
+    }
+
+    .date {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .header-icons button {
+      background: none;
+      border: none;
+      margin-left: 16px;
+      padding: 0;
+    }
+
+    .header-icons img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .notification-tabs {
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      background: #fafafa;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .notification-tabs button {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 8px;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .notification-tabs button.active {
+      border-bottom: 2px solid #4285f4;
+      color: #4285f4;
+      font-weight: bold;
+    }
+
+    .notifications {
+      padding: 16px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .date-heading {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 16px 0 8px;
+      color: #888;
+    }
+
+    .notification-card {
+      background: #fdfdfd;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      padding: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .notification-card.unread {
+      background: #fff8f2;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .card-summary {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .card-time {
+      font-size: 12px;
+      color: #999;
+      text-align: right;
+    }
+
+    .card-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .card-actions button {
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      max-width: 480px;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer button {
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .footer img {
+      width: 28px;
+      height: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="date">2025 3/3</div>
+    <div class="header-icons">
+      <button><img src="notifications.png" alt="通知" /></button>
+      <button><img src="Settings.png" alt="設定" /></button>
+      <button><img src="account_circle.png" alt="プロフィール" /></button>
+    </div>
+  </div>
+
+  <div class="notification-tabs">
+    <button class="active">すべて</button>
+    <button>重要</button>
+    <button>未読</button>
+  </div>
+
+  <div class="notifications">
+    <h3 class="date-heading">今日</h3>
+
+    <div class="notification-card unread">
+      <h4 class="card-title">------------</h4>
+      <p class="card-summary">-------------------------------</p>
+      <div class="card-time">14:00</div>
+      <div class="card-actions">
+        <button class="mark-read">既読にする</button>
+        <button class="delete">削除</button>
+      </div>
+    </div>
+
+    <div class="notification-card">
+      <h4 class="card-title">------------</h4>
+      <p class="card-summary">--------------------------------</p>
+      <div class="card-time">09:30</div>
+      <div class="card-actions">
+        <button class="delete">削除</button>
+      </div>
+    </div>
+
+    <div class="notification-card">
+      <h4 class="card-title">------------</h4>
+      <p class="card-summary">--------------------------------</p>
+      <div class="card-time">09:30</div>
+      <div class="card-actions">
+        <button class="delete">削除</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button><img src="Home.png" alt="ホーム" /></button>
+    <button><img src="List.png" alt="記録" /></button>
+    <button><img src="File text.png" alt="カルテ" /></button>
+    <button><img src="Settings.png" alt="設定" /></button>
+  </div>
+</body>
+</html>
